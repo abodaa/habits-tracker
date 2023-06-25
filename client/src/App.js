@@ -2,6 +2,8 @@ import { CgMenuGridO, CgProfile } from "react-icons/cg";
 import menuImage from './images/menu.png'
 import profPic from "./images/user.png";
 import searchIcon from "./images/search.png";
+import logo from "./images/logo.png";
+
 
 
 
@@ -10,13 +12,19 @@ export default function App() {
     <div className="App">
       {/* Navigation */}
       <nav className="nav-container">
-        <img src={menuImage} alt="" className="nav-imgs" />
+        <img src={logo} alt="" className="logo" />
+
         <div className="input-container">
           <input type="text" placeholder="Enter your habit name ..." />
           <img src={searchIcon} alt="" className="search-icon" />
         </div>
 
-        <img src={profPic} alt="" className="nav-imgs" />
+        <div className="menu-profpic-container">
+          <img src={menuImage} alt="" className="nav-imgs" />
+          {/* <img src={profPic} alt="" className="nav-imgs" /> */}
+          <p>Log in</p>
+          <p>Sign up</p>
+        </div>
       </nav>
 
       {/* Header */}

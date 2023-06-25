@@ -16,8 +16,8 @@ margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 1rem;
-  background-color: 	#eeeef2;
+  padding: 0.5rem;
+  background-color: 	#f8f8f8;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   position: fixed;
   top: 0;
@@ -48,7 +48,41 @@ margin: auto;
 .nav-imgs{
   width: 2rem;
 }
+.logo{
+  width: 9rem;
+}
 
+.menu-profpic-container{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-profpic-container :nth-child(2){
+  background-color:#ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+
+}
+.menu-profpic-container :nth-child(2):hover{
+  background-color:#484b6a;
+  color: white;
+}
+
+.menu-profpic-container :nth-child(3){
+  background-color:#e4e5f1;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+
+}
+.menu-profpic-container :nth-child(3):hover{
+  background-color:#484b6a;
+  color: white;
+}
 .App-header{
   margin: auto;
   margin-top: 6rem;
@@ -82,7 +116,8 @@ margin: auto;
   cursor: pointer;
 }
 .filter-buttons button:hover{
-  background-color: #e4e5f1;
+  background-color:#484b6a;
+  color: white;
   
 }
 
