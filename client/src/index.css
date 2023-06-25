@@ -18,6 +18,11 @@ margin: auto;
   justify-content: space-evenly;
   padding: 1rem;
   background-color: 	#eeeef2;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 .input-container{
   position: relative;
@@ -44,15 +49,21 @@ margin: auto;
   width: 2rem;
 }
 
-
+.App-header{
+  margin: auto;
+  margin-top: 6rem;
+  width: 60%;
+}
 .App-header :first-child{
   text-align: center;
   font-size: 3rem;
+  font-weight: 900
 }
 .App-header :nth-child(2){
   text-align: center;
   margin: auto;
   font-size: 1.5rem;
+  color: #484b6a;
 
 }
 .filter-buttons{

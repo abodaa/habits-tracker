@@ -21,9 +21,10 @@ export default function App() {
 
       {/* Header */}
       <header className="App-header">
-        <h1>Track your HABITS easily!</h1>
+        <h1>Build Better Habits, Build a Better Life</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Harness the power of our personalized habit tracker app to streamline
+          your everyday routines and achieve your goals.
         </p>
       </header>
 
