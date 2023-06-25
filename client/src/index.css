@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fbfbfb;
+}
+
+.App{
+width: 100%;
+margin: auto;
+}
+.nav-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+  background-color: 	#eeeef2;
+}
+.input-container{
+  position: relative;
+  border: none;
+  width: 30%;
+  border-radius: 5px;
+}
+.input-container input{
+  border: none;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.nav-container input:focus{
+  outline: none;
+}
+.search-icon{
+  width: 1.5rem;
+  position: absolute;
+  right: 0;
+  top: 30%;
+}
+.nav-imgs{
+  width: 2rem;
+}
+
+
+.App-header :first-child{
+  text-align: center;
+  font-size: 3rem;
+}
+.App-header :nth-child(2){
+  text-align: center;
+  margin: auto;
+  font-size: 1.5rem;
+
+}
+.filter-buttons{
+  display: flex;
+  margin-top: 2rem;
+  align-items: center;
+  justify-content:center;
+  gap: 1rem;
+}
+.filter-buttons button{
+  border: none;
+  padding: 0.6rem 2rem;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
+}
+.filter-buttons button:hover{
+  background-color: #e4e5f1;
+  
+}
+
+/*  */
