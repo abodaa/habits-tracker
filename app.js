@@ -2,6 +2,21 @@
 const express = require("express");
 const app = express();
 
+
+// core error************************
+
+const cors=require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions)) // Use this after the variable declaration
+
+
+// *************************888
+
 require("dotenv").config();
 app.use(express.json());
 const DBconnect = require("./db/connect");

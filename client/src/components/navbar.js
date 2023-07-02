@@ -3,13 +3,17 @@ import logo from "../images/logo.png";
 import searchIcon from "../images/search.png";
 import menuImage from "../images/menu.png";
 import "../style/navbar.css";
+import { Link } from "react-router-dom";
 
-export default function navbar() {
+export default function Navbar() {
   return (
     <div>
       {/* Navigation */}
       <nav className="nav-container">
-        <img src={logo} alt="" className="logo" />
+        <div className="logo-help-btn">
+          <img src={logo} alt="" className="logo" />
+          <button className="nav-btn-one">Help me AI</button>
+        </div>
 
         {/* <div className="input-container">
           <input type="text" placeholder="Enter your habit name ..." />
@@ -19,8 +23,13 @@ export default function navbar() {
         <div className="menu-profpic-container">
           <img src={menuImage} alt="" className="nav-imgs" />
           {/* <img src={profPic} alt="" className="nav-imgs" /> */}
-          <p>Log in</p>
-          <p>Sign up</p>
+          <Link to="/Login" class="list">
+            <button className="nav-btn-two">Log in</button>
+          </Link>
+
+          <Link to="/Signup" class="list">
+            <button className="nav-btn-three">Sign up</button>
+          </Link>
         </div>
       </nav>
     </div>

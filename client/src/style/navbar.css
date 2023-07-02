@@ -4,7 +4,7 @@
   justify-content: space-between;
   width: 80%;
   margin: auto;
-  padding: 0.5rem;
+  padding: 1rem;
   background-color: 	#ffffff;
   /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
   position: fixed;
@@ -42,35 +42,45 @@
 .logo{
   width: 9rem;
 }
-
+.logo-help-btn{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
 .menu-profpic-container{
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-
-.menu-profpic-container :nth-child(2){
-  background-color:#ffffff;
+.nav-btn-one{
+  border: none;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
   transition: ease-in-out 0.2s;
-
 }
-.menu-profpic-container :nth-child(2):hover{
-  background-color:#484b6a;
+.nav-btn-two{
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+.nav-btn-three{
+  border: none;
+  background-color: #484b6a;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+.nav-btn-two:hover, .nav-btn-one:hover{
+  background-color: #686d9a;
   color: white;
 }
-
-.menu-profpic-container :nth-child(3){
-  background-color:#e4e5f1;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: ease-in-out 0.2s;
-
-}
-.menu-profpic-container :nth-child(3):hover{
-  background-color:#484b6a;
+.nav-btn-three:hover{
+  background-color: #686d9a;
   color: white;
 }

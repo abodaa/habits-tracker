@@ -18,12 +18,12 @@ export default function Home() {
       </header>
 
       {/* Filter buttons */}
-      <div className="filter-buttons">
+      {/* <div className="filter-buttons">
         <button>New</button>
         <button>On Progress</button>
         <button>Cancelled</button>
         <button>Achieved</button>
-      </div>
+      </div> */}
     </div>
   );
 }

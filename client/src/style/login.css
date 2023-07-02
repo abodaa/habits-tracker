@@ -5,10 +5,10 @@
   display: flex;
   align-items: center;
 }
-form{
+.form-container{
   display: flex;
   flex-direction: column;
-  width: 1000%;
+  width: 100%;
   align-items: flex-start;
   justify-content: center;
   gap: 1rem;
@@ -18,24 +18,30 @@ form{
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #fbfbfb;
-
-
+  background-color: #484b6a2b;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
 }
 form > input{
   width: 80%;
   padding: 1rem;
   border-radius: 5px;
-  border: 1px solid #484b6a51;
+  border: 1px solid #484b6a28;
 }
 input:focus{
   outline: none;
 }
-form > button{
+.form-container > button{
   width: 30%;
 
 }
-form > label{
+.form-container > label{
   color: #484b6a;
 }
 .login-btn{
@@ -65,9 +71,11 @@ form > label{
   gap: 6rem;
 }
 .login-page-footer > p{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   color: #484b6a;
 }
-.login-page-footer > p > a{
-  text-decoration: none;
-  color: black;
+.login-page-footer-login-btn:hover{
+  color: #484b6a;
 }
