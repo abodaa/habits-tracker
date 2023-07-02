@@ -18,8 +18,39 @@ const register = async (req, res) => {
   }
 };
 
-const login = (req, res) => {
-  res.send("Login User");
+const login = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    // Check if email and password is provided
+    if (!email || !password) {
+      return res
+        .status(StatusCodes.BAD_REQUEST)
+        .send("Please provide all credentials.");
+    }
+
+    // Check if user exists
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res
+        .status(StatusCodes.UNAUTHORIZED)
+        .json({ msg: "User not found" });
+    }
+
+    // Check if the password is correct
+    const isPasswordCorrect = await user.comparePassword(password);
+    if (!isPasswordCorrect) {
+      console.log("Incorrect Password");
+      return res
+        .status(StatusCodes.UNAUTHORIZED)
+        .json({ msg: "Unauthorized User" });
+    }
+
+    const token = await user.createJWT();
+    res.status(StatusCodes.OK).json({ user: { name: user.username }, token });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 module.exports = { register, login };

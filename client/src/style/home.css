@@ -1,0 +1,44 @@
+.App{
+width: 100%;
+margin: auto;
+}
+
+.App-header{
+  margin: auto;
+  margin-top: 6rem;
+  width: 60%;
+}
+.App-header :first-child{
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900
+}
+.App-header :nth-child(2){
+  text-align: center;
+  margin: auto;
+  font-size: 1.5rem;
+  color: #484b6a;
+
+}
+.filter-buttons{
+  display: flex;
+  margin-top: 2rem;
+  align-items: center;
+  justify-content:center;
+  gap: 1rem;
+}
+.filter-buttons button{
+  border: none;
+  padding: 0.6rem 2rem;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
+}
+.filter-buttons button:hover{
+  background-color:#484b6a;
+  color: white;
+  
+}
+
+/*  */
