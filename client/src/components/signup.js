@@ -3,25 +3,45 @@ import "../style/login.css";
 import loginimage from "../images/habit.jpg";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import SuccessAlert from "./alert";
+
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 export default function Signup() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [register, setRegister] = useState(false);
+  const [register, setRegister] = useState();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (username && email && password) {
-      axios
-        .post("http://localhost:3000/api/v1/auth/register", {
-          username:username,
-          email:email,
-          password:password
-        })
-        .then((res) => console.log(res.data));
-    } else {
-      alert(`Please provide all info`);
+    try {
+      if (username && email && password) {
+        const res = await axios.post(
+          "http://localhost:3000/api/v1/auth/register",
+          {
+            username: username,
+            email: email,
+            password: password,
+          }
+        );
+
+        if (res.data.token) {
+          console.log(res.data.token);
+          cookies.set("TOKEN", res.data.token, {
+            path: "/",
+          });
+        } else {
+          setRegister(false);
+          console.log(res.data);
+        }
+        window.location.href = "/Dashboard";
+      } else {
+        alert("Please provide all info");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -30,14 +50,11 @@ export default function Signup() {
       <img src={loginimage} alt="" className="login-page-img" />
       <div className="form-container">
         {/* ************************* */}
-
         <form onSubmit={(e) => handleSubmit(e)}>
           <div>
             {" "}
             <h2>Welcome to LIMAD | ልማድ </h2>
-            <p>Start doing it every day!</p>
           </div>
-
           {/* Username */}
           <label htmlFor="username">Username</label>
           <input
@@ -49,7 +66,6 @@ export default function Signup() {
             required
             placeholder="Enter your username. e.g. Abraham"
           />
-
           {/* email */}
           <label htmlFor="email">Email</label>
           <input
@@ -80,10 +96,9 @@ export default function Signup() {
             Sign up
           </button>
         </form>
-        {register && <div>Registered</div>}
-
+        {register && <SuccessAlert />}{" "}
+        {register === false && <div>Something went wrong</div>}
         {/* ************************* */}
-
         <div className="login-page-footer">
           <p>
             Already have LIMAD | ልማድ account?
