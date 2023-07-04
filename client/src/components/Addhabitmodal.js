@@ -20,28 +20,28 @@ export default function AddHabit() {
   const [enddate, setEnddate] = useState("");
 
   let handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       if (title) {
-        const res = await axios.post("http://localhost:3000/api/v1/habit",
+        const res = await axios.post(
+          "http://localhost:3000/api/v1/habit",
           {
             title: title,
             enddate: enddate,
-          }, {
-          headers: {
-            authorization: `Bearer ${token}`,
           },
-        });
-
+          {
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
+          }
+        );
         console.log(res);
-
         window.location.href = "/Dashboard";
       } else {
         alert("Please provide all info");
       }
     } catch (error) {
-             console.log(token);
-
+      console.log(token);
     }
   };
 
@@ -60,31 +60,45 @@ export default function AddHabit() {
         Add habit
       </button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Subscribe</DialogTitle>
+        <DialogTitle>New Habit</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To subscribe to this website, please enter your email address here.
-            We will send updates occasionally.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
+            numquam. Officiis aut impedit qui esse.
           </DialogContentText>
-          <input
-            required
-            type="text"
-            name="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Enter your title of habit ..."
-          />
-          <input
-            required
-            type="date"
-            name="enddate"
-            value={enddate}
-            onChange={(e) => setEnddate(e.target.value)}
-          />
+          <div className="add-habit-input-container">
+            <div className="input-contaier">
+              <label htmlFor="title">Title</label>
+              <input
+                required
+                type="text"
+                name="title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                placeholder="Enter your title of habit ..."
+                id="title"
+                className="add-habit-input"
+              />
+            </div>
+
+            <div className="input-contaier">
+              <label htmlFor="date">End date</label>
+
+              <input
+                required
+                type="date"
+                name="enddate"
+                value={enddate}
+                onChange={(e) => setEnddate(e.target.value)}
+                id="date"
+                className="date-picker"
+              />
+            </div>
+          </div>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleSubmit}>Add</Button>
+          <Button onClick={handleSubmit}>Add Habit</Button>
         </DialogActions>
       </Dialog>
     </div>
