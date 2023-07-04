@@ -11,7 +11,7 @@ const HabitSchema = mongoose.Schema(
     status: {
       type: String,
       enum: ["new", "on progress", "cancelled", "achieved"],
-      default: "on progress",
+      default: "new",
     },
     createdBy: {
       type: mongoose.Types.ObjectId,

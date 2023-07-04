@@ -19,7 +19,7 @@ const getAllHabits = async (req, res) => {
     const habits = await Habit.find({ createdBy: req.user.userId }).sort(
       "createdAt"
     );
-    res.status(StatusCodes.OK).json({ habits, count: habits.length });
+    res.status(StatusCodes.OK).json({ habits, count: habits.length, name: req.user.name});
   } catch (error) {
     res.send(error);
   }

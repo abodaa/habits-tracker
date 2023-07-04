@@ -7,6 +7,8 @@ import Dashboard from "./components/dashboard";
 import Navbar from "./components/navbar";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import ProtectedNav from "./components/ProtectedNav";
+import AddHabit from "./components/Addhabitmodal";
+
 
 import { BrowserRouter,Route,Routes } from "react-router-dom";
 import Cookies from "universal-cookie";
@@ -21,6 +23,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />
+          <Route path="/Addhabit" element={<AddHabit />} />
+
           <Route element={<ProtectedRoutes />}>
             <Route path="/Dashboard" element={<Dashboard />} />
           </Route>
