@@ -1,8 +1,8 @@
 import { CgMenuGridO, CgProfile } from "react-icons/cg";
 import profPic from "./images/user.png";
 import Home from "./components/home";
-import Login from "./components/login";
-import Signup from "./components/signup";
+import Login from "./components/Archive/login";
+import Signup from "./components/Archive/signup";
 import Dashboard from "./components/dashboard";
 import Navbar from "./components/navbar";
 import ProtectedRoutes from "./components/ProtectedRoutes";

@@ -3,8 +3,8 @@ import logo from "../images/logo.png";
 import searchIcon from "../images/search.png";
 import menuImage from "../images/menu.png";
 import "../style/navbar.css";
-import { Link } from "react-router-dom";
-
+import LoginModal from '../components/LoginModal'
+import SignupModal from '../components/SignupModal'
 export default function Navbar() {
   return (
     <div>
@@ -23,13 +23,15 @@ export default function Navbar() {
         <div className="menu-profpic-container">
           <img src={menuImage} alt="" className="nav-imgs" />
           {/* <img src={profPic} alt="" className="nav-imgs" /> */}
-          <Link to="/Login" class="list">
+          {/* <Link to="/Login" class="list">
             <button className="nav-btn-two">Log in</button>
-          </Link>
+          </Link> */}
+          <LoginModal />
+          <SignupModal />
 
-          <Link to="/Signup" class="list">
+          {/* <Link to="/Signup" class="list">
             <button className="nav-btn-three">Sign up</button>
-          </Link>
+          </Link> */}
         </div>
       </nav>
     </div>

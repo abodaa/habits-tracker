@@ -50,7 +50,7 @@ export default function Dashboard() {
           return (
             <div key={habit.id} className="habit-container">
               <div className="title-status-container">
-                <h3>{habit.title}</h3>
+                <p>{habit.title}</p>
                 <p
                   className="habit-status"
                   style={{
@@ -70,15 +70,15 @@ export default function Dashboard() {
                 </p>
               </div>
               <div className="title-status-container">
-                <h4>Started</h4>
+                <p>Started</p>
                 <p>{new Date(habit.createdAt).toDateString()}</p>
               </div>
               <div className="title-status-container">
-                <h4>End Date</h4>
+                <p>End Date</p>
                 <p>{new Date(habit.enddate).toDateString()}</p>
               </div>
               <div className="title-status-container">
-                <h4>Time to achieve</h4>
+                <p>Time to achieve</p>
                 <p>3 weeks</p>
               </div>
               <div className="progress-bar"></div>
