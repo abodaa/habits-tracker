@@ -5,7 +5,7 @@ const HabitSchema = mongoose.Schema(
   {
     title: {
       type: String,
-      required: [true, "please provide company name"],
+      required: [true, "please provide title"],
       maxlength: 50,
     },
     status: {

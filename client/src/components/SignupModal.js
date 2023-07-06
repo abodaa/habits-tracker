@@ -12,8 +12,8 @@ import axios from "axios";
 
 import "../style/login.css";
 import loginimage from "../images/habit.jpg";
-import SuccessAlert from "./SuccessAlert";
-import ErrorAlert from './ErrorAlert'
+import SuccessAlert from "./Alerts/SuccessAlert";
+import ErrorAlert from "./Alerts/ErrorAlert";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 let token = cookies.get("TOKEN");
@@ -45,7 +45,7 @@ export default function AddHabit() {
           });
           setRegister(true);
           setTimeout(() => {
-              window.location.href = "/Dashboard";
+            window.location.href = "/Dashboard";
           }, 2000);
         } else {
           setRegister(false);

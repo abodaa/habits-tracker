@@ -1,5 +1,4 @@
-import { CgMenuGridO, CgProfile } from "react-icons/cg";
-import profPic from "./images/user.png";
+
 import Home from "./components/home";
 import Login from "./components/Archive/login";
 import Signup from "./components/Archive/signup";

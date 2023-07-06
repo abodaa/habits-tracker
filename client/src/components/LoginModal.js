@@ -9,9 +9,9 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { VscAdd } from "react-icons/vsc";
 import { useState } from "react";
 import axios from "axios";
-import LoginAlertsuccess from "../components/LoginAlertsuccess";
-import LoginAlertIncorrectUsername from "./LoginAlertIncorrectUsername";
-import LoginAlertIncorrectPassword from "./LoginAlertIncorrectPassword";
+import LoginAlertsuccess from "./Alerts/LoginAlertsuccess";
+import LoginAlertIncorrectUsername from "./Alerts/LoginAlertIncorrectUsername";
+import LoginAlertIncorrectPassword from "./Alerts/LoginAlertIncorrectPassword";
 
 import "../style/login.css";
 import loginimage from "../images/habit.jpg";

@@ -7,41 +7,48 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { VscAdd } from "react-icons/vsc";
+import { MdOutlineModeEditOutline } from "react-icons/md";
+
 import { useState } from "react";
 import axios from "axios";
+
+import EditError from "./Alerts/EditError";
+import EditSuccess from "./Alerts/EditSuccess";
 
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 let token = cookies.get("TOKEN");
 
-export default function AddHabit() {
-  const [open, setOpen] = React.useState(false);
+export default function EditHabit(props) {
+  const [open, setOpen] = React.useState();
+  const [status, setStatus] = useState("");
   const [title, setTitle] = useState("");
   const [enddate, setEnddate] = useState("");
+  const [editSuccess, setEditSuccess] = useState();
 
-  let handleSubmit = async (e) => {
+  let handleEdit = async (e) => {
     e.preventDefault();
     try {
-      if (title) {
-        const res = await axios.post(
-          "http://localhost:3000/api/v1/habit",
-          {
-            title: title,
-            enddate: enddate,
+      const res = await axios.patch(
+        `http://localhost:3000/api/v1/habit/${props.id}`,
+        {
+          status: status,
+          title: title,
+          enddate: enddate,
+        },
+        {
+          headers: {
+            authorization: `Bearer ${token}`,
           },
-          {
-            headers: {
-              authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        console.log(res);
+        }
+      );
+      setEditSuccess(true);
+      setTimeout(() => {
         window.location.href = "/Dashboard";
-      } else {
-        alert("Please provide all info");
-      }
+      }, 2000);
     } catch (error) {
       console.log(error);
+      setEditSuccess(false);
     }
   };
 
@@ -55,12 +62,12 @@ export default function AddHabit() {
 
   return (
     <div>
-      <button className="add-habit-filter" onClick={handleClickOpen}>
-        <VscAdd />
-        Add habit
-      </button>
+      <div className="edit-delete-icon-one" onClick={handleClickOpen}>
+        <MdOutlineModeEditOutline style={{ color: "green" }} />
+        <p>Edit</p>
+      </div>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>New Habit</DialogTitle>
+        <DialogTitle>Edit Habit</DialogTitle>
         <DialogContent>
           <DialogContentText>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
@@ -70,7 +77,6 @@ export default function AddHabit() {
             <div className="input-contaier">
               <label htmlFor="title">Title</label>
               <input
-                required
                 type="text"
                 name="title"
                 value={title}
@@ -80,12 +86,25 @@ export default function AddHabit() {
                 className="add-habit-input"
               />
             </div>
+            <div className="input-contaier">
+              <label htmlFor="title">Status</label>
+              <select
+                id="status"
+                value={status}
+                name="status"
+                onChange={(e) => setStatus(e.target.value)}
+              >
+                <option value="new">New</option>
+                <option value="on progress">On Progress</option>
+                <option value="cancelled">Cancelled</option>
+                <option value="achieved">Achieved</option>
+              </select>
+            </div>
 
             <div className="input-contaier">
               <label htmlFor="date">End date</label>
 
               <input
-                required
                 type="date"
                 name="enddate"
                 value={enddate}
@@ -98,9 +117,12 @@ export default function AddHabit() {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleSubmit}>Add Habit</Button>
+          <Button onClick={handleEdit}>Edit Habit</Button>
         </DialogActions>
       </Dialog>
+
+      {editSuccess === true && <EditSuccess />}
+      {editSuccess === false && <EditError />}
     </div>
   );
 }

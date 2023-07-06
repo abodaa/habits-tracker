@@ -1,9 +1,12 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Cookies from "universal-cookie";
 import "../style/dashboard.css";
 import { LiaEditSolid } from "react-icons/lia";
-import { MdDeleteOutline } from "react-icons/md";
+import { MdDeleteOutline, MdOutlineModeEditOutline } from "react-icons/md";
+import { CiMenuKebab } from "react-icons/ci";
+import DeleteConfirmationPopUp from "../components/DeletConfirmationPopUp";
+import EditHabit from "../components/EditHabit";
 
 
 const cookies = new Cookies();
@@ -11,6 +14,18 @@ let token = cookies.get("TOKEN");
 
 export default function Dashboard() {
   const [habits, setHabits] = useState([]);
+  const [openId, setOpenId] = useState();
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = (i) => {
+    setOpenId(i);
+    setOpen((prevState) => !prevState);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   useEffect(() => {
     axios
       .get("http://localhost:3000/api/v1/habit", {
@@ -38,19 +53,19 @@ export default function Dashboard() {
 
         {/* Filter buttons */}
         <div className="filter-buttons">
-        <button>New</button>
-        <button>On Progress</button>
-        <button>Cancelled</button>
-        <button>Achieved</button>
-      </div>
+          <button>New</button>
+          <button>On Progress</button>
+          <button>Cancelled</button>
+          <button>Achieved</button>
+        </div>
       </div>
 
       <div style={{ marginTop: "3rem" }} className="habit-main-container">
-        {habits.map((habit) => {
+        {habits.map((habit, index) => {
           return (
-            <div key={habit.id} className="habit-container">
+            <div key={habit._id} className="habit-container">
               <div className="title-status-container">
-                <p>{habit.title}</p>
+                <h3>{habit.title}</h3>
                 <p
                   className="habit-status"
                   style={{
@@ -82,16 +97,21 @@ export default function Dashboard() {
                 <p>3 weeks</p>
               </div>
               <div className="progress-bar"></div>
-              <div className="Motivation-text">You got this</div>
-              <div className="icons-container">
-                <LiaEditSolid
-                  className="icons"
-                  style={{ fontSize: "1.2rem", color: "#484b6a" }}
-                />
-                <MdDeleteOutline
-                  className="icons"
-                  style={{ fontSize: "1.2rem", color: "#484b6a" }}
-                />
+              <div key={index} className="edit-delete-main-container">
+                <div className="icons-container">
+                  <p className="Motivation-text">You got this</p>
+                  <CiMenuKebab
+                    className="icons"
+                    style={{ fontSize: "1.2rem", color: "#484b6a" }}
+                    onClick={() => handleOpen(habit._id)}
+                  />
+                </div>
+                {openId === habit._id && open && (
+                  <div className="edit-delete-icons-container">
+                    <EditHabit id={habit._id}/>
+                    <DeleteConfirmationPopUp id={habit._id} />
+                  </div>
+                )}
               </div>
             </div>
           );
@@ -100,9 +120,3 @@ export default function Dashboard() {
     </div>
   );
 }
-
-
-// <h1>{habit.title}</h1>
-// <h1>{habit.createdAt}</h1>
-// <h1>{habit.status}</h1>
-// <h1>{habit.enddate}</h1>
