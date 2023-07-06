@@ -108,7 +108,12 @@ export default function Dashboard() {
                 </div>
                 {openId === habit._id && open && (
                   <div className="edit-delete-icons-container">
-                    <EditHabit id={habit._id}/>
+                    <EditHabit
+                      id={habit._id}
+                      status={habit.status}
+                      title={habit.title}
+                      enddate={habit.enddate}
+                    />
                     <DeleteConfirmationPopUp id={habit._id} />
                   </div>
                 )}

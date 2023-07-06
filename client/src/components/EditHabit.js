@@ -21,9 +21,9 @@ let token = cookies.get("TOKEN");
 
 export default function EditHabit(props) {
   const [open, setOpen] = React.useState();
-  const [status, setStatus] = useState("");
-  const [title, setTitle] = useState("");
-  const [enddate, setEnddate] = useState("");
+  const [status, setStatus] = useState(props.status);
+  const [title, setTitle] = useState(props.title);
+  const [enddate, setEnddate] = useState(props.enddate);
   const [editSuccess, setEditSuccess] = useState();
 
   let handleEdit = async (e) => {
@@ -69,10 +69,7 @@ export default function EditHabit(props) {
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Edit Habit</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
-            numquam. Officiis aut impedit qui esse.
-          </DialogContentText>
+         
           <div className="add-habit-input-container">
             <div className="input-contaier">
               <label htmlFor="title">Title</label>
@@ -87,12 +84,13 @@ export default function EditHabit(props) {
               />
             </div>
             <div className="input-contaier">
-              <label htmlFor="title">Status</label>
+              <label htmlFor="status">Status</label>
               <select
                 id="status"
                 value={status}
                 name="status"
                 onChange={(e) => setStatus(e.target.value)}
+                className="status-dropdown"
               >
                 <option value="new">New</option>
                 <option value="on progress">On Progress</option>

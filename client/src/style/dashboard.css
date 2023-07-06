@@ -188,3 +188,16 @@ font-size: 0.8rem;
     gap: 0.5rem;
     width: 100%;
 }
+
+.status-dropdown{
+    position: relative;
+     width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #484b6a28;
+}
+.status-dropdown:focus{
+  outline: none;
+
+}
+
