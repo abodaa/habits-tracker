@@ -15,11 +15,28 @@ const createHabit = async (req, res) => {
 };
 
 const getAllHabits = async (req, res) => {
+  const { habitStatus } = req.query;
+  if (habitStatus === "all") {
+    try {
+      const habits = await Habit.find({
+        createdBy: req.user.userId,
+      }).sort("createdAt");
+      return res
+        .status(StatusCodes.OK)
+        .json({ habits, count: habits.length, name: req.user.name });
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
   try {
-    const habits = await Habit.find({ createdBy: req.user.userId }).sort(
-      "createdAt"
-    );
-    res.status(StatusCodes.OK).json({ habits, count: habits.length, name: req.user.name});
+    const habits = await Habit.find({
+      createdBy: req.user.userId,
+      status: habitStatus,
+    }).sort("createdAt");
+    return res
+      .status(StatusCodes.OK)
+      .json({ habits, count: habits.length, name: req.user.name });
   } catch (error) {
     res.send(error);
   }

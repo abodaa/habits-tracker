@@ -17,6 +17,9 @@ export default function Dashboard() {
   const [openId, setOpenId] = useState();
   const [open, setOpen] = useState(false);
 
+  const [habitStatus, setHabitStatus] = useState("all");
+
+
   const handleOpen = (i) => {
     setOpenId(i);
     setOpen((prevState) => !prevState);
@@ -26,9 +29,27 @@ export default function Dashboard() {
     setOpen(false);
   };
 
+
+const allStatus = () => {
+  setHabitStatus("all");
+};
+ const newStatus = () => {
+   setHabitStatus("new");
+ };
+  const onProgressStatus = () => {
+    setHabitStatus("on progress");
+  };
+  const cancelledStatus = () => {
+    setHabitStatus("cancelled");
+  };
+  const achievedStatus = () => {
+    setHabitStatus("achieved");
+  };
+
+
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/v1/habit", {
+      .get(`http://localhost:3000/api/v1/habit?habitStatus=${habitStatus}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -37,7 +58,7 @@ export default function Dashboard() {
         setHabits(res.data.habits);
         console.log(res.data.habits);
       });
-  }, []);
+  }, [habitStatus]);
 
   return (
     <div>
@@ -52,10 +73,11 @@ export default function Dashboard() {
 
         {/* Filter buttons */}
         <div className="filter-buttons">
-          <button>New</button>
-          <button>On Progress</button>
-          <button>Cancelled</button>
-          <button>Achieved</button>
+          <button onClick={allStatus}>All</button>
+          <button onClick={newStatus}>New</button>
+          <button onClick={onProgressStatus}>On Progress</button>
+          <button onClick={cancelledStatus}>Cancelled</button>
+          <button onClick={achievedStatus}>Achieved</button>
         </div>
       </div>
 
