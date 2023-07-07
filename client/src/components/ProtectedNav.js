@@ -7,13 +7,14 @@ import Switch from "../components/Switch";
 import { BsFilterLeft } from "react-icons/bs";
 import { VscAdd } from "react-icons/vsc";
 import { BiDownArrow } from "react-icons/bi";
+import { RxDashboard } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 
 import FormDialog from "../components/Addhabitmodal";
 
 import axios from "axios";
 import Cookies from "universal-cookie";
-import { Link } from "react-router-dom";
 import "../style/navbar.css";
 
 const cookies = new Cookies();
@@ -49,11 +50,15 @@ export default function Navbar() {
           <img src={logo} alt="" className="logo" />
           <button className="nav-btn-one">Help me AI</button>
         </div>
-        {/* <div className="input-container">
-          <input type="text" placeholder="Enter your habit name ..." />
-          <img src={searchIcon} alt="" className="search-icon" />
-        </div>{" "} */}
+
+
         <div className="filter-add-habit-container">
+        <Link to='./Dashboard' style={{textDecoration:"none"}}>
+          <button className="add-habit-filter">
+            <RxDashboard />
+            Dashboard
+          </button>
+        </Link>
           <FormDialog />
           <button className="add-habit-filter">
             <BsFilterLeft />

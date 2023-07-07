@@ -14,8 +14,9 @@
   width: 26%;
   border: 1px solid #484b6a34;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-  border-radius: 5px;
+  border-radius: 15px;
   padding: 2rem;
+  background-color: white;
 }
 .habit-container:hover{
   border: 1px solid #484b6a7c;
@@ -27,27 +28,62 @@
     justify-content: space-between;
     border-bottom: 1px solid #484b6a25;
 }
-.habit-status{
-    background-color: #484b6a2d;
-    padding: 0.3rem 0.5rem;
-    font-size: 0.8rem;
-    border-radius: 3px;
+.title-status-container > p{
+  font-size: 0.8rem;
+  
+}
+.title-status-container > h3 {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.status-description{
+  background-color: #484b6a18;
+  padding: 0.3rem 0.8rem;
+    border-radius: 10rem;
 
 }
-.progress-bar{
+.habit-status{
+     background-color: #484b6a18;
+    padding: 0.3rem 0.8rem;
+    border-radius: 10rem;
+    font-size: 0.6rem;
+    border-radius: 30rem;
+    text-transform: capitalize;
+
+}
+.progress-bar-achieved{
     background-color: green;
+    height: 0.3rem;
+    border-radius: 5px;
+    width: 100%;
+}
+.progress-bar-cancelled{
+    background-color: red;
+    height: 0.3rem;
+    border-radius: 5px;
+    width: 100%;
+}
+.progress-bar-onprogress{
+    background-color: gold;
+    height: 0.3rem;
+    border-radius: 5px;
+    width: 100%;
+}
+.progress-bar-new{
+    background-color: grey;
     height: 0.3rem;
     border-radius: 5px;
     width: 100%;
 }
 .Motivation-text{
     margin-top: 10px;
-    background-color: #484b6a21;
-    width: 25%;
+    width: 60%;
     text-align: center;
     padding: 0.3rem 0.5rem;
-    font-size: 0.8rem;
-    border-radius: 3px;
+    font-size: 0.7rem;
+    background-color: #6c78ff21;
+    padding: 0.3rem 0.8rem;
+    border-radius: 10rem;
 }
 .icons-container{
     display: flex;
@@ -125,16 +161,10 @@ font-size: 0.8rem;
 
 .dashboard-header :first-child{
   text-align: center;
-  font-size: 3rem;
-  font-weight: 900
-}
-.dashboard-header :nth-child(2){
-  text-align: center;
   margin: auto;
   font-size: 1.5rem;
-  color: #484b6a;
-
 }
+
 .filter-buttons{
   display: flex;
   margin-top: 2rem;
@@ -145,6 +175,7 @@ font-size: 0.8rem;
 .filter-buttons button{
   border: none;
   padding: 0.6rem 2rem;
+  /* background-color: white; */
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   transition: ease-in-out 0.2s;
@@ -191,7 +222,7 @@ font-size: 0.8rem;
 
 .status-dropdown{
     position: relative;
-     width: 100%;
+    width: 100%;
     padding: 1rem;
     border-radius: 5px;
     border: 1px solid #484b6a28;
@@ -199,5 +230,8 @@ font-size: 0.8rem;
 .status-dropdown:focus{
   outline: none;
 
+}
+select::-ms-expand {
+    display: none;
 }
 

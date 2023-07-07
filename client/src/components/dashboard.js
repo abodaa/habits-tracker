@@ -44,7 +44,6 @@ export default function Dashboard() {
       <div className="App">
         {/* Header */}
         <header className="dashboard-header">
-          <h1>Build Better Habits, Build a Better Life</h1>
           <p>
             Harness the power of our personalized habit tracker app to
             streamline your everyday routines and achieve your goals.
@@ -62,6 +61,35 @@ export default function Dashboard() {
 
       <div style={{ marginTop: "3rem" }} className="habit-main-container">
         {habits.map((habit, index) => {
+          // Start date formatting
+          let startYear = new Date(habit.createdAt).getFullYear();
+          let startMonth = new Date(habit.createdAt).getMonth();
+          let startDay = new Date(habit.createdAt).getDate();
+          let startFormat = startMonth + "/" + startDay + "/" + startYear;
+
+          // Get today
+          let todayYear = new Date().getFullYear();
+          let todayMonth = new Date().getMonth();
+          let todayDay = new Date().getDate();
+          let todayFormat = todayMonth + "/" + todayDay + "/" + todayYear;
+
+          // End date formatting
+          let endYear = new Date(habit.enddate).getFullYear();
+          let endMonth = new Date(habit.enddate).getMonth();
+          let endDay = new Date(habit.enddate).getDate();
+          let endFormat = endMonth + "/" + endDay + "/" + endYear;
+
+          // Calculate date difference
+          let startDate = new Date(`${startFormat}`);
+          let endDate = new Date(`${endFormat}`);
+          let todayDate = new Date(`${todayFormat}`);
+
+          // To calculate the time difference of two dates
+          let Difference_In_Time = endDate.getTime() - todayDate.getTime();
+
+          // To calculate the no. of days between two dates
+          let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+          // const motivationText =
           return (
             <div key={habit._id} className="habit-container">
               <div className="title-status-container">
@@ -81,25 +109,56 @@ export default function Dashboard() {
                         : "black",
                   }}
                 >
-                  {habit.status.toUpperCase()}
+                  {habit.status}
                 </p>
               </div>
               <div className="title-status-container">
                 <p>Started</p>
-                <p>{new Date(habit.createdAt).toDateString()}</p>
+                <p className="status-description">
+                  {new Date(habit.createdAt).toDateString()}
+                </p>
               </div>
               <div className="title-status-container">
                 <p>End Date</p>
-                <p>{new Date(habit.enddate).toDateString()}</p>
+                <p className="status-description">
+                  {new Date(habit.enddate).toDateString()}
+                </p>
               </div>
               <div className="title-status-container">
                 <p>Time to achieve</p>
-                <p>3 weeks</p>
+                {Difference_In_Days > 0 ? (
+                  <p className="status-description">
+                    {Difference_In_Days}{" "}
+                    {Difference_In_Days > 1 ? "Days" : "Day"}
+                  </p>
+                ) : (
+                  <p className="status-description" style={{ color: "red" }}>
+                    Expired
+                  </p>
+                )}
               </div>
-              <div className="progress-bar"></div>
+              <div
+                className={
+                  habit.status === "achieved"
+                    ? "progress-bar-achieved"
+                    : habit.status === "cancelled"
+                    ? "progress-bar-cancelled"
+                    : habit.status === "on progress"
+                    ? "progress-bar-onprogress"
+                    : "progress-bar-new"
+                }
+              ></div>
               <div key={index} className="edit-delete-main-container">
                 <div className="icons-container">
-                  <p className="Motivation-text">You got this</p>
+                  <p className="Motivation-text">
+                    {habit.status === "achieved"
+                      ? "Well done!"
+                      : habit.status === "cancelled"
+                      ? "Remember you can always start over."
+                      : habit.status === "on progress"
+                      ? "You got this!"
+                      : "Awsome! Keep on going."}
+                  </p>
                   <CiMenuKebab
                     className="icons"
                     style={{ fontSize: "1.2rem", color: "#484b6a" }}
