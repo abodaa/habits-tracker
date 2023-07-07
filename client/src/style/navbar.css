@@ -11,7 +11,7 @@
   top: 0;
   right: 0;
   left: 0;
-
+z-index: 1;
   /* margin: auto; */
 
 }
@@ -43,7 +43,7 @@
   width: 2rem;
 }
 .logo{
-  width: 9rem;
+  width: 6rem;
 }
 .logo-help-btn{
   display: flex;

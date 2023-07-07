@@ -1,0 +1,95 @@
+/* Left Container */
+
+.footer-main-container{
+    padding: 3rem 9rem;
+    background-color: #484b6a;
+    color: #e0e2ff;
+    margin: auto;
+    margin-top: 4rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-top-right-radius: 45px;
+    border-top-left-radius: 45px;
+
+}
+.footer-left-container{
+    width: 50%;
+    border-right: 1px solid white;
+    padding-right: 6rem;
+}
+.footer-logo{
+    width: 5rem;
+}
+.footer-donate-btn{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    border: none;
+    /* background-color:#ffffff; */
+    color: #484b6a;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.footer-donate-btn:hover{
+    background-color: #d8dbf6;
+}
+.donate-social-icons-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-icon-one{
+    font-size: 2rem;
+    /* border-right: 1px solid white; */
+}
+.social-icon-two{
+    font-size: 2rem;
+    /* border-right: 1px solid white; */
+}
+
+
+/* Center Container */
+.footer-center-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.footer-left-center{
+    width: 30%;
+}
+.work-with-me-title{
+
+}
+.footer-contact{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.phone-icon{
+    font-size: 1.5rem;
+    border-right: 1px solid white;
+    padding-right: 1rem;
+}
+.phone-numbers{
+    line-height: 0.4rem;
+    padding-left: 1rem;
+
+}
+.email-icon{
+    font-size: 1.5rem;
+    border-right: 1px solid white;
+    padding-right: 1rem;
+}
+.emails{
+     line-height: 0.4rem;
+    padding-left: 1rem;
+}
+.email {
+    text-decoration: none;
+    color: #e0e2ff;
+}

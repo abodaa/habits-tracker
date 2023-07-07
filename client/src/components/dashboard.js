@@ -7,6 +7,7 @@ import { MdDeleteOutline, MdOutlineModeEditOutline } from "react-icons/md";
 import { CiMenuKebab } from "react-icons/ci";
 import DeleteConfirmationPopUp from "../components/DeletConfirmationPopUp";
 import EditHabit from "../components/EditHabit";
+import Footer from "../components/Footer";
 
 
 const cookies = new Cookies();
@@ -203,6 +204,7 @@ const allStatus = () => {
           );
         })}
       </div>
+      <Footer />
     </div>
   );
 }
