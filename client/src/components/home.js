@@ -34,9 +34,9 @@ export default function Home() {
 
           <div className="hero-right-container">
             <div className="hero-right-notification-btn">
+              <p className="hero-btn">Set a goal</p>
               <p className="hero-btn">Start today</p>
               <p className="hero-btn">Be consistent</p>
-              <p className="hero-btn">Set a goal</p>
               <p className="hero-btn">Make a habit</p>
             </div>
             <header className="App-header">
