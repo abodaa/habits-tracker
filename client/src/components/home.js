@@ -1,17 +1,17 @@
+import "../style/home.scss";
 import { CgMenuGridO, CgProfile } from "react-icons/cg";
-import { GrRun } from "react-icons/gr"
+import { GrRun } from "react-icons/gr";
 import { FaHandHoldingHeart } from "react-icons/fa";
 import { BsArrowBarRight } from "react-icons/bs";
 import { SlArrowDownCircle } from "react-icons/sl";
-import Footer from '../components/Footer'
-
+import { AiOutlineSchedule } from "react-icons/ai";
+import Footer from "../components/Footer";
 import menuImage from "../images/menu.png";
 import profPic from "../images/user.png";
 import searchIcon from "../images/search.png";
 import logo from "../images/logo.png";
 import heroImage from "../images/hero.png";
-
-import "../style/home.css";
+import hometwo from "../images/hometwo.jpg";
 
 export default function Home() {
   return (
@@ -61,7 +61,30 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
+        <section className="under-hero-main-container">
+          <div className="section-two-container">
+            <div className="section-two-left">
+              <h1>2k</h1>
+              <div className="global-users">
+                <p>Global</p>
+                <p>Users</p>
+              </div>
+            </div>
+            <div className="devider"></div>
+            <div className="section-two-middle">
+              <AiOutlineSchedule style={{ fontSize: "3rem" }} />
+              <div className="middle-txt">
+                <p>Start your day right with a clear</p>
+                <p>organized schedule that keeps</p>
+                <p>you on track for success.</p>
+              </div>
+            </div>
+            <div className="devider"></div>
+            <div className="section-two-right">
+              <img className="hero-two-img" src={hometwo} alt="" />
+            </div>
+          </div>
+        </section>
       </div>
       <Footer />
     </div>

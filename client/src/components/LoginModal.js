@@ -1,3 +1,4 @@
+import "../style/login.scss";
 import * as React from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -13,7 +14,6 @@ import LoginAlertsuccess from "./Alerts/LoginAlertsuccess";
 import LoginAlertIncorrectUsername from "./Alerts/LoginAlertIncorrectUsername";
 import LoginAlertIncorrectPassword from "./Alerts/LoginAlertIncorrectPassword";
 
-import "../style/login.css";
 import loginimage from "../images/habit.jpg";
 // import SuccessAlert from "./Alert";
 

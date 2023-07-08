@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState, useRef } from "react";
 import Cookies from "universal-cookie";
-import "../style/dashboard.css";
+import "../style/dashboard.scss";
 import { LiaEditSolid } from "react-icons/lia";
 import { MdDeleteOutline, MdOutlineModeEditOutline } from "react-icons/md";
 import { CiMenuKebab } from "react-icons/ci";

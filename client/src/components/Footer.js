@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/footer.css";
+import "../style/footer.scss";
 import footerLogo from "../images/footerlogo.png";
 import { BsTelephoneFill } from "react-icons/bs";
 import { LuMails } from "react-icons/lu";
@@ -10,48 +10,52 @@ import { PiArticleMedium } from "react-icons/pi";
 
 export default function Footer() {
   return (
-    <div className="footer-main-container">
-      <div className="footer-left-container">
-        <img src={footerLogo} className="footer-logo" alt="" />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolorem
-          provident cupiditate incidunt ipsum architecto.
-        </p>
-        <div className="donate-social-icons-container">
-          <button className="footer-donate-btn">
-            <PiArticleMedium style={{ fontSize: "1.2rem" }} />
-            Blog
-          </button>
-          <BsTelegram className="social-icon-one" />
-          <SiFacebook className="social-icon-two" />
-        </div>
-        <p>&copy; 2023 Limad App by Abraham</p>
-      </div>
-      <div className="footer-center-container">
-        <h2 className="work-with-me-title">Work with me</h2>
-        <div className="footer-contact">
-          <BsTelephoneFill className="phone-icon" />
-          <div className="phone-numbers">
-            <p>+251922338477</p>
-            <p>+251707214695</p>
+    <div>
+      <div className="footer-main-container">
+        <div className="footer-left-container">
+          <img src={footerLogo} className="footer-logo" alt="" />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
+            dolorem provident cupiditate incidunt ipsum architecto.
+          </p>
+          <div className="donate-social-icons-container">
+            <button className="footer-donate-btn">
+              <PiArticleMedium style={{ fontSize: "1.2rem" }} />
+              Blog
+            </button>
+            <BsTelegram className="social-icon-one" />
+            <SiFacebook className="social-icon-two" />
           </div>
         </div>
-        <div className="footer-contact">
-          <LuMails className="email-icon" />
-          <div className="emails">
-            <a href="mailto: abrahambogale747@gmail.com" className="email">
-              abrahambogale747@gmail.com
-            </a>
+        <div className="footer-devider"></div>
+
+        <div className="footer-center-container">
+          <h2 className="work-with-me-title">Work with me</h2>
+          <div className="footer-contact">
+            <BsTelephoneFill className="phone-icon" />
+            <div className="phone-numbers">
+              <p>+251922338477</p>
+              <p>+251707214695</p>
+            </div>
+          </div>
+          <div className="footer-contact">
+            <LuMails className="email-icon" />
+            <div className="emails">
+              <a href="mailto: abrahambogale747@gmail.com" className="email">
+                abrahambogale747@gmail.com
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      {/* <div className="footer-right-container">
+        {/* <div className="footer-right-container">
         <div className="footer-contact">
           <BsTelephoneFill className="social-icon-one" />
 
           <SiFacebook className="social-icon-two" />
         </div>
       </div> */}
+      </div>
+      <p className="footer-copy-right">&copy; 2023 Limad App by Abraham</p>
     </div>
   );
 }

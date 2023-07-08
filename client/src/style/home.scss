@@ -66,7 +66,6 @@ position: relative;
   width: 25rem;
   padding: 1rem;
   border-radius: 30%;
-  /* box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; */
 
 }
 
@@ -126,4 +125,62 @@ position: relative;
   background-color: #2f314b;
   cursor: pointer;
   color: white;
+}
+
+/* Section two */
+.under-hero-main-container{
+  margin-top: 3rem;
+  background-color: #6c78ff16;
+  padding: 1rem 4rem;
+  border-radius: 3rem;
+}
+.section-two-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.section-two-left{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+ 
+}
+.section-two-left > h1{
+  font-size: 4rem;
+}
+.global-users{
+  line-height: 0.3rem;
+}
+.global-users > p{
+  font-size: 2rem;
+}
+.devider{
+  height: 4rem;
+  width: 0.2rem;
+  background-color:#2f314b6f;
+}
+.section-two-middle{
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1.3rem;
+  box-shadow: #2f314b64 0px 0px 0px 1px;
+  border-radius: 2rem;
+
+}
+.middle-txt{
+  line-height: 0.3rem;
+
+}
+
+.hero-two-img{
+  width: 15rem;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  transition: ease-in-out 0.4s;
+
+}
+.hero-two-img:hover{
+  transform: scale(1.1);
+  cursor: default;
 }

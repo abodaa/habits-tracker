@@ -1,3 +1,4 @@
+import "../style/navbar.scss";
 import React, { useState, useEffect } from "react";
 import logo from "../images/logo.png";
 import searchIcon from "../images/search.png";
@@ -10,12 +11,10 @@ import { BiDownArrow } from "react-icons/bi";
 import { RxDashboard } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
-
 import FormDialog from "../components/Addhabitmodal";
 
 import axios from "axios";
 import Cookies from "universal-cookie";
-import "../style/navbar.css";
 
 const cookies = new Cookies();
 let token = cookies.get("TOKEN");

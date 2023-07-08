@@ -1,3 +1,4 @@
+import "../style/login.scss";
 import * as React from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -10,7 +11,6 @@ import { VscAdd } from "react-icons/vsc";
 import { useState } from "react";
 import axios from "axios";
 
-import "../style/login.css";
 import loginimage from "../images/habit.jpg";
 import SuccessAlert from "./Alerts/SuccessAlert";
 import ErrorAlert from "./Alerts/ErrorAlert";
