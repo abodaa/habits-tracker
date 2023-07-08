@@ -1,15 +1,10 @@
-.App{
-width: 100%;
-margin: auto;
-}
-
-.App-header{
+/* Home  */
+.home-main-container{
+  width: 80%;
   margin: auto;
-  margin-top: 6rem;
-  width: 60%;
+  padding-top: 10rem;
 }
 .App-header :first-child{
-  text-align: center;
   font-size: 3rem;
   font-weight: 900
 }
@@ -20,5 +15,115 @@ margin: auto;
   color: #484b6a;
 
 }
+/* Hero Section */
+.hero-main-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10rem;
 
-/*  */
+}
+
+/* Hero Left */
+.hero-left-container{
+position: relative;
+}
+
+.hero-top-description{
+  position: absolute;
+  top: 10rem;
+  right: -6rem;
+   border-radius: 50rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  background-color: #6c78ff3f;
+  padding: 0rem 2rem;
+  transition: ease-in-out 0.4s;
+}
+.hero-top-description:hover{
+  transform: scale(1.1);
+  cursor: default;
+}
+.hero-bottom-description{
+  position: absolute;
+  bottom: 5rem;
+  left: -5rem;
+  border-radius: 50rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #6c78ff63;
+  padding: 0rem 2rem;
+  transition: ease-in-out 0.4s;
+}
+.hero-bottom-description:hover{
+  transform: scale(1.1);
+  cursor: default;
+}
+.hero-img{
+  width: 25rem;
+  padding: 1rem;
+  border-radius: 30%;
+  /* box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; */
+
+}
+
+/* Hero Right */
+
+.hero-right-description{
+  width: 100%;
+  font-size: 1.5rem;
+  color: #33354b;
+}
+.hero-right-notification-btn{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  
+}
+
+.hero-btn{
+  border-radius: 50rem;
+  background-color: #6c78ff29;
+  padding: 0.5rem 1rem;
+}
+.hero-btns-container{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.hero-btn-one{
+  border-radius: 50rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: none;
+  background-color: #484b6a;
+  color: white;
+  padding: 1rem 2rem;
+  transition: ease-in-out 0.2s;
+}
+.hero-btn-one:hover{
+  background-color: #2f314b;
+  cursor: pointer;
+}
+.hero-btn-two{
+  border-radius: 50rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: none;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  border: 1px solid #484b6a;
+  color: #33354b;
+  transition: ease-in-out 0.2s;
+}
+.hero-btn-two:hover{
+  background-color: #2f314b;
+  cursor: pointer;
+  color: white;
+}

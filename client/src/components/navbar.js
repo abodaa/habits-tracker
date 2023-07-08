@@ -5,13 +5,16 @@ import menuImage from "../images/menu.png";
 import "../style/navbar.css";
 import LoginModal from '../components/LoginModal'
 import SignupModal from '../components/SignupModal'
+import { Link } from 'react-router-dom';
 export default function Navbar() {
   return (
     <div>
       {/* Navigation */}
       <nav className="nav-container">
         <div className="logo-help-btn">
-          <img src={logo} alt="" className="logo" />
+          <Link to='/'>
+            <img src={logo} alt="" className="logo" />
+          </Link>
           <button className="nav-btn-one">Help me AI</button>
         </div>
 

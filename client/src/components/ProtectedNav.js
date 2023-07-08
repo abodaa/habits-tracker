@@ -47,18 +47,19 @@ export default function Navbar() {
       {/* Navigation */}
       <nav className="nav-container">
         <div className="logo-help-btn">
-          <img src={logo} alt="" className="logo" />
+          <Link to="/">
+            <img src={logo} alt="" className="logo" />
+          </Link>
           <button className="nav-btn-one">Help me AI</button>
         </div>
 
-
         <div className="filter-add-habit-container">
-        <Link to='./Dashboard' style={{textDecoration:"none"}}>
-          <button className="add-habit-filter">
-            <RxDashboard />
-            Dashboard
-          </button>
-        </Link>
+          <Link to="./Dashboard" style={{ textDecoration: "none" }}>
+            <button className="add-habit-filter">
+              <RxDashboard />
+              Dashboard
+            </button>
+          </Link>
           <FormDialog />
           <button className="add-habit-filter">
             <BsFilterLeft />
