@@ -39,10 +39,9 @@ export default function Home() {
               <p className="hero-btn">Be consistent</p>
               <p className="hero-btn">Make a habit</p>
             </div>
-            <header className="App-header">
-              <h1>Build Better Habits, Build a Better Life</h1>
-            </header>
-
+            <h1 className="hero-reight-header">
+              Build Better Habits, Build a Better Life
+            </h1>
             <p className="hero-right-description">
               Harness the power of our personalized habit tracker app to
               streamline your everyday routines and achieve your goals.

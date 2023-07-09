@@ -20,11 +20,11 @@ export default function Footer() {
           </p>
           <div className="donate-social-icons-container">
             <button className="footer-donate-btn">
-              <PiArticleMedium style={{ fontSize: "1.2rem" }} />
+              <PiArticleMedium className="social-icon" />
               Blog
             </button>
-            <BsTelegram className="social-icon-one" />
-            <SiFacebook className="social-icon-two" />
+            <BsTelegram className="social-icon" />
+            <SiFacebook className="social-icon" />
           </div>
         </div>
         <div className="footer-devider"></div>
@@ -55,7 +55,9 @@ export default function Footer() {
         </div>
       </div> */}
       </div>
-      <p className="footer-copy-right">&copy; 2023 Limad App by Abraham</p>
+      <p className="footer-copy-right">
+        &copy; 2023 ልማድ | Limad App by Abraham
+      </p>
     </div>
   );
 }

@@ -17,22 +17,7 @@
       width: 80%;
     }
 }
-.App-header :first-child{
-  font-size: 3rem;
-  font-weight: 900;
-    @media (max-width: 700px) {
-      font-size: 1.5rem;
-    }
-    @media (min-width: 700px) {
-      font-size: 1.7rem;
-    }
-    @media (min-width: 1024px) {
-      font-size: 2.5rem;
-    }
-    @media (min-width: 1400px) {
-      font-size: 3rem;
-    }
-}
+
 
 /* Hero Section */
 .hero-main-container{
@@ -181,6 +166,7 @@ margin: auto;
 
 /* Hero Right */
 .hero-right-container{
+
     @media (max-width: 700px) {
       width: 100%;
     }
@@ -195,13 +181,27 @@ margin: auto;
     }
 
 }
-
+.hero-reight-header {
+  font-size: 3rem;
+  font-weight: 900;
+    @media (max-width: 700px) {
+      font-size: 1.3rem;
+    }
+    @media (min-width: 700px) {
+      font-size: 1.7rem;
+    }
+    @media (min-width: 1024px) {
+      font-size: 2.5rem;
+    }
+    @media (min-width: 1400px) {
+      font-size: 3rem;
+    }
+}
 .hero-right-description{
   width: 100%;
-  font-size: 1.5rem;
   color: #33354b;
     @media (max-width: 700px) {
-      font-size: 1rem;
+      font-size: 0.8rem;
       
     }
     @media (min-width: 700px) {
@@ -221,7 +221,7 @@ margin: auto;
   flex-wrap: wrap;
   gap: 1rem;
     @media (max-width: 700px) {
-      font-size: 0.6rem;
+      font-size: 0.5rem;
       gap: 0.3rem;
          
 
@@ -268,7 +268,7 @@ margin: auto;
   transition: ease-in-out 0.2s;
     @media (max-width: 700px) {
       font-size: 0.6rem;
-      padding: 0.6rem 1rem;
+      padding: 0.4rem 1rem;
     }
     @media (min-width: 700px) {
       font-size: 0.6rem;
@@ -301,7 +301,7 @@ margin: auto;
   transition: ease-in-out 0.2s;
    @media (max-width: 700px) {
       font-size: 0.6rem;
-      padding: 0.6rem 1rem;
+      padding: 0.4rem 1rem;
     }
     @media (min-width: 700px) {
       font-size: 0.6rem;
@@ -326,29 +326,78 @@ margin: auto;
 .under-hero-main-container{
   margin-top: 3rem;
   background-color: #6c78ff16;
-  padding: 1rem 4rem;
+  padding: 1rem 1rem;
   border-radius: 3rem;
 }
 .section-two-container{
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   justify-content: space-around;
+    @media (max-width: 700px) {
+      flex-direction: column;
+    }
+    @media (min-width: 700px) {
+    }
+    @media (min-width: 1024px) {
+    }
+    @media (min-width: 1400px) {
+
+    }
 }
 .section-two-left{
-  display: flex;
-  align-items: center;
-  gap: 2rem;
- 
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+   
+    @media (max-width: 700px) {
+      font-size: 3rem;
+      background-color: white;
+      padding: 0rem 3rem;
+      border-radius: 2rem;
+    }
+    @media (min-width: 700px) {
+      font-size: 2.8rem;
+
+    }
+    @media (min-width: 1024px) {
+      font-size: 3rem;
+    }
+    @media (min-width: 1400px) {
+      font-size: 4rem;
+    }
 }
 .section-two-left > h1{
-  font-size: 4rem;
+    @media (max-width: 700px) {
+      font-size: 3rem;
+    }
+    @media (min-width: 700px) {
+      font-size: 2.8rem;
+    }
+    @media (min-width: 1024px) {
+      font-size: 3rem;
+    }
+    @media (min-width: 1400px) {
+      font-size: 4rem;
+    }
 }
 .global-users{
+
   line-height: 0.3rem;
 }
 .global-users > p{
-  font-size: 2rem;
+  font-weight: 100;
+    @media (max-width: 700px) {
+      font-size: 1.5rem;
+    }
+    @media (min-width: 700px) {
+      font-size: 1.3rem;
+    }
+    @media (min-width: 1024px) {
+      font-size: 1.5rem;
+    }
+    @media (min-width: 1400px) {
+      font-size: 2rem;
+    }
 }
 .devider{
   height: 4rem;
@@ -362,10 +411,44 @@ margin: auto;
   padding: 1.3rem;
   box-shadow: #2f314b64 0px 0px 0px 1px;
   border-radius: 2rem;
+    @media (max-width: 700px) {
+      gap: 2rem;
+      padding: 1.3rem;
+  flex-wrap: wrap;
+
+    }
+    @media (min-width: 700px) {
+      gap: 1rem;
+      padding: 0.9rem;
+    }
+    @media (min-width: 1024px) {
+      gap: 2rem;
+      padding: 1.3rem;
+    }
+    @media (min-width: 1400px) {
+      gap: 2rem;
+      padding: 1.3rem;
+    }
+
 
 }
 .middle-txt{
-  line-height: 0.3rem;
+   @media (max-width: 700px) {
+      line-height: 0.3rem;
+      font-size: 0.8rem;
+    }
+    @media (min-width: 700px) {
+      line-height: 0.7rem;
+      font-size: 0.7rem;
+    }
+    @media (min-width: 1024px) {
+      line-height: 0.5rem;
+      font-size: 1rem;
+    }
+    @media (min-width: 1400px) {
+      line-height: 0.3rem;
+      font-size: 1rem;
+    }
 
 }
 
@@ -374,6 +457,19 @@ margin: auto;
   border-radius: 2rem;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   transition: ease-in-out 0.4s;
+    @media (max-width: 700px) {
+      width: 15rem;
+    }
+    @media (min-width: 700px) {
+      width: 11rem;
+    }
+    @media (min-width: 1024px) {
+      width: 15rem;
+    }
+    @media (min-width: 1400px) {
+      width: 15rem;
+
+    }
 
 }
 .hero-two-img:hover{
