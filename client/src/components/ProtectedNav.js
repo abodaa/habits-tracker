@@ -9,9 +9,15 @@ import { BsFilterLeft } from "react-icons/bs";
 import { VscAdd } from "react-icons/vsc";
 import { BiDownArrow } from "react-icons/bi";
 import { RxDashboard } from "react-icons/rx";
+import { TfiHelpAlt } from "react-icons/tfi";
+import { AiOutlineLogout } from "react-icons/ai";
+
+
+
 import { Link } from "react-router-dom";
 
 import FormDialog from "../components/Addhabitmodal";
+import Mobilemenu from "../components/Mobilemenu";
 
 import axios from "axios";
 import Cookies from "universal-cookie";
@@ -49,7 +55,7 @@ export default function Navbar() {
           <Link to="/">
             <img src={logo} alt="" className="logo" />
           </Link>
-          <button className="nav-btn-one">Help me AI</button>
+          <TfiHelpAlt />
         </div>
 
         <div className="filter-add-habit-container">
@@ -59,25 +65,36 @@ export default function Navbar() {
               Dashboard
             </button>
           </Link>
-          <FormDialog />
-          <button className="add-habit-filter">
+          <FormDialog className="add-habit-icon" />
+          {/* <button className="add-habit-filter">
             <BsFilterLeft />
             Filter
             <BiDownArrow />
-          </button>
+          </button> */}
         </div>
 
         <div className="menu-profpic-container">
-          <img src={menuImage} alt="" className="nav-imgs" />
-
+          {/* <img src={menuImage} alt="" className="nav-imgs" /> */}
+          <div className="mobile-menu">
+            <Link to="./Dashboard">
+              <button className="add-habit-filter-mobile">
+                <RxDashboard
+                  className="mobile-menu"
+                  style={{ color: "black" }}
+                />
+              </button>
+            </Link>
+            <Mobilemenu className="mobile-add-habit-icon" />
+          </div>
           <button onClick={logout} className="nav-btn-two">
-            Log out
+            <AiOutlineLogout style={{fontSize:"1rem"}}/>
           </button>
 
           <img src={profPic} alt="" className="nav-imgs" />
-          <p>{`Hi, ${name}`}</p>
-          <Switch />
+          <p className="username">{`Hi, ${name}`}</p>
+          {/* <Switch className="switch" /> */}
         </div>
+        <div></div>
       </nav>
     </div>
   );

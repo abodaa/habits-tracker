@@ -15,7 +15,7 @@ export default function Navbar() {
           <Link to="/">
             <img src={logo} alt="" className="logo" />
           </Link>
-          <button className="nav-btn-one">Help me AI</button>
+          <button className="nav-btn-one">Help AI</button>
         </div>
 
         {/* <div className="input-container">
@@ -24,7 +24,7 @@ export default function Navbar() {
         </div> */}
 
         <div className="menu-profpic-container">
-          <img src={menuImage} alt="" className="nav-imgs" />
+          {/* <img src={menuImage} alt="" className="nav-imgs" /> */}
           {/* <img src={profPic} alt="" className="nav-imgs" /> */}
           {/* <Link to="/Login" class="list">
             <button className="nav-btn-two">Log in</button>
